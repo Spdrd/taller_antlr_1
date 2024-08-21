@@ -1,4 +1,4 @@
-// Generated from c:/Users/aulasingenieria/Downloads/taller_antlr_1/gramatica.g4 by ANTLR 4.13.1
+// Generated from c:/Users/Sonyvideo1/Programas Personales/javaCosas/taller_antlr_1/gramatica.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

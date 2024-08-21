@@ -1,16 +1,38 @@
-grammar gramatica;
+grammar Lenguaje;
 
-// TOKENS
-IDENTIFICADOR : [a-z] + ([A-Z] | [a-z] | [0-9])*;
-VALOR : ([a-z] | [A-Z] | [0-9]) + ([a-z] | [A-Z] | [0-9])*;
-ESPACIO_VACIO : [ \t\r\n]+ -> skip;
-OPERADOR_ASIGNACION : '=';
-OPERADORES_MULT : ('*' | '/');
-OPERADORES_SUM : ('+' | '-');
-OPERADORES_COMP : ('<' | '>' | '==' | '!=' | '&&' | '||' | '<=' | '>=');
+prog:   stmt+ ;
 
+stmt:   assignStmt
+    |   writeStmt
+    |   ifStmt
+    |   whileStmt
+    ;
 
-// REGLAS
-termino : (VALOR (OPERADORES_MULT VALOR)*);
-expresion : (termino (OPERADORES_SUM termino)*);
-asignacion : IDENTIFICADOR OPERADOR_ASIGNACION expresion;
+assignStmt: ID '=' expr ';' ;
+
+writeStmt: 'escribe' expr ';' ;
+
+ifStmt: 'si' '(' expr ')' '{' stmt+ '}' ('sino' '{' stmt+ '}')? ;
+
+whileStmt: 'mientras' expr '{' stmt+ '}' ;
+
+expr:   expr ('+' | '-') expr
+    |   expr ('*' | '/' | '%') expr
+    |   expr '^' expr
+    |   '(' expr ')'
+    |   '-' expr
+    |   expr ('>' | '<' | '>=' | '<=' | '==' | '!=') expr
+    |   expr '&&' expr
+    |   expr '||' expr
+    |   ID
+    |   NUMBER
+    |   STRING
+    |   BOOLEAN
+    ;
+
+ID:     [a-zA-Z][a-zA-Z0-9]* ;
+NUMBER: [0-9]+('.'[0-9]+)? ;
+STRING: '"' .*? '"' ;
+BOOLEAN: 'true' | 'false' ;
+
+WS: [ \t\r\n]+ -> skip ;

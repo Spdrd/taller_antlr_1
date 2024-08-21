@@ -1,4 +1,4 @@
-// Generated from c:/Users/aulasingenieria/Downloads/taller_antlr_1/gramatica.g4 by ANTLR 4.13.1
+// Generated from c:/Users/Sonyvideo1/Programas Personales/javaCosas/taller_antlr_1/gramatica.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -104,6 +104,14 @@ public class gramaticaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_termino; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof gramaticaListener ) ((gramaticaListener)listener).enterTermino(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof gramaticaListener ) ((gramaticaListener)listener).exitTermino(this);
+		}
 	}
 
 	public final TerminoContext termino() throws RecognitionException {
@@ -162,6 +170,14 @@ public class gramaticaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expresion; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof gramaticaListener ) ((gramaticaListener)listener).enterExpresion(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof gramaticaListener ) ((gramaticaListener)listener).exitExpresion(this);
+		}
 	}
 
 	public final ExpresionContext expresion() throws RecognitionException {
@@ -215,6 +231,14 @@ public class gramaticaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_asignacion; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof gramaticaListener ) ((gramaticaListener)listener).enterAsignacion(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof gramaticaListener ) ((gramaticaListener)listener).exitAsignacion(this);
+		}
 	}
 
 	public final AsignacionContext asignacion() throws RecognitionException {
