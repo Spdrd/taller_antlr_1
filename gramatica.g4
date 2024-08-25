@@ -1,4 +1,4 @@
-grammar Lenguaje;
+grammar gramatica;
 
 prog:   stmt+ ;
 
